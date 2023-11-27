@@ -23,7 +23,7 @@ const Layout = ({ children }: Readonly<props>) => {
     }
   }, [pathname, name]);
   return (
-    <div className="max-h-screen bg-slate-400 dark:bg-primary flex flex-col items-center ">
+    <div className="min-h-screen bg-slate-400 dark:bg-primary flex flex-col items-center ">
       <Navbar />
       {children}
       <NavbarMobile />

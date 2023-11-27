@@ -45,7 +45,7 @@ const App = () => {
   }
   return (
     <Layout>
-      <div ref={scrollToTop} className="container border p-6 sm:p-[60px] bg-slate-300 dark:bg-primary-1 border-transparent rounded overflow-y-auto">
+      <div ref={scrollToTop} className="container h-screen border p-6 sm:p-[60px] bg-slate-300 dark:bg-primary-1 border-transparent rounded overflow-y-scroll">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-8 gap-x-6">
           {pokemons.map((pokemon, index) => (
             <Link key={index} to={`pokemon/${pokemon?.name}`}>
@@ -62,7 +62,7 @@ const App = () => {
             </Link>
           ))}
         </div>
-        <div className="w-full text-slate-900   flex justify-between text-2xl py-12 sm:py-5">
+        <div className="w-full text-slate-900 flex justify-between text-2xl py-12 sm:py-5">
           <button className="py-2 px-5 border bg-white border-slate-400 disabled:cursor-not-allowed rounded-lg" disabled={!prevPage} onClick={() => fetchPokemons(prevPage)}>Prev</button>
           <button className="py-2 px-5 border bg-white border-slate-400 disabled:cursor-not-allowed rounded-lg" disabled={!nextPage} onClick={() => fetchPokemons(nextPage)}>Next</button>
         </div>

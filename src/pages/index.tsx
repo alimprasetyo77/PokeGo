@@ -1,6 +1,5 @@
 import Layout from "@/components/Layout"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import { getPokemonImage, getPokemons } from "@/utils/apis/pokemons/api"
 import { useEffect, useRef, useState } from "react"
 import { Link } from "react-router-dom"
@@ -46,8 +45,7 @@ const App = () => {
   }
   return (
     <Layout>
-      <ScrollArea ref={scrollToTop} className="container border p-6 sm:p-[60px] bg-slate-300 dark:bg-primary-1 border-transparent rounded overflow-y-auto">
-        <ScrollBar />
+      <div ref={scrollToTop} className="container border p-6 sm:p-[60px] bg-slate-300 dark:bg-primary-1 border-transparent rounded overflow-y-auto">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-8 gap-x-6">
           {pokemons.map((pokemon, index) => (
             <Link key={index} to={`pokemon/${pokemon?.name}`}>
@@ -68,7 +66,7 @@ const App = () => {
           <button className="py-2 px-5 border bg-white border-slate-400 disabled:cursor-not-allowed rounded-lg" disabled={!prevPage} onClick={() => fetchPokemons(prevPage)}>Prev</button>
           <button className="py-2 px-5 border bg-white border-slate-400 disabled:cursor-not-allowed rounded-lg" disabled={!nextPage} onClick={() => fetchPokemons(nextPage)}>Next</button>
         </div>
-      </ScrollArea>
+      </div>
     </Layout>
   )
 }

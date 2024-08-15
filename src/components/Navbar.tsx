@@ -13,7 +13,7 @@ const Navbar = () => {
           <div className="flex items-center p-2  gap-4">
             <img
               src="https://pokemon-iota-jet.vercel.app/_next/image?url=%2FPokeBall.ico&w=64&q=75"
-              className="h-14 md:h-auto"
+              className="h-14 "
               alt="pokemon"
             />
             <span className="text-slate-900 dark:text-white font-semibold text-xl ">PokeGo</span>
